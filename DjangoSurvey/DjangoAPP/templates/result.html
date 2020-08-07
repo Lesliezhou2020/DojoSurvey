@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dojo Survey Index</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/result.css' %}">
+    </head>
+ 
+    <body>
+        <h1>Submitted Info</h1>
+        <form action='/result' method='post'>
+            {% csrf_token %}
+            <p>Your Name: {{ name_on_template }}</p>
+            <p>Dojo Location: {{ location_on_template }}</p>
+            <p>Favorite Language: {{ language_on_template }}</p>
+            <p>Comments: {{ comments_on_template }}</p>
+            <button type='submit'>Go Back</button>
+        </form>
+    </body>
+</html>

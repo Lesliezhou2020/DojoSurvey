@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dojo Survey Index</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+ 
+    <body>
+        <form action='/result' method='post'>
+            {% csrf_token %}
+            Your Name: <input type='text' name='name'><br>
+            <lable for="Location">Location:</lable>
+            <select name="Location">
+                <option value="San Jose">San Jose</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Bellevue">Bellevue</option>
+            </select><br>   
+            <lable for="language">Favorite Language:</lable>
+            <select name="language">
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+            </select><br>        
+            Comments(optional):<br><input type='text' name='Comments'><br>
+            <button type='submit'>Button</button>
+        </form>
+    </body>
+</html>
